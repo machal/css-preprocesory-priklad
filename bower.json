@@ -1,0 +1,23 @@
+{
+  "name": "css-preprocesory",
+  "version": "0.0.0",
+  "authors": [
+    "Martin Michálek <michalek@shortcat.cz>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "3.1.1",
+    "lesshat": "~3.0.0",
+    "nib": "~1.0.2",
+    "bourbon": "~4.0.1",
+    "normalize-css": "~3.0.1"
+  }
+}
