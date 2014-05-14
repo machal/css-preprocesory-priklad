@@ -7,11 +7,16 @@
 @import "components/box.less";
 @import "components/text.less";
 
+/* 
+  --- Testy mimo hlavni priklad --- 
+  (Mirne upraveno oproti dokumentaci kvuli podpore starsi verze LESSu v Prepros - 1.4.1)
+*/
+
+/* Lazylading promenne */
+
 @font-size: 15px; 
 
-/* TESTY */
-
-// Interpolace
+/* Interpolace promennych */
 
 @image-dir: "images/";
 
@@ -29,6 +34,8 @@
   .mixin-selector-interpolation(~".box");
 }
 
+/* Namespaces pro mixiny */
+
 #gradient {
 
   .linear(@par) {
@@ -45,7 +52,7 @@
   #gradient > .linear(~"to left, red, black");
 }
 
-// Pattern matching
+/* Pattern matching */
 
 .special-box {
   font-size: 10px;
@@ -96,6 +103,7 @@
 /* BEM */
 
 /*
+  V HTML takhle:
   <ul class="nav nav--hidden">
     <li class="nav__item"></li>
   </ul>

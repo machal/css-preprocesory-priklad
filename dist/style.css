@@ -80,16 +80,23 @@ h1 {
   -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
-/* TESTY */
+/* 
+  --- Testy mimo hlavni priklad --- 
+  (Mirne upraveno oproti dokumentaci kvuli podpore starsi verze LESSu v Prepros - 1.4.1)
+*/
+/* Lazylading promenne */
+/* Interpolace promennych */
 .box-image-dir {
   background-image: url("images/icons/icon.png");
 }
 .box-selector-interpolation .box {
   font-size: 11px;
 }
+/* Namespaces pro mixiny */
 .box-gradient {
   background: linear-gradient(to left, red, black);
 }
+/* Pattern matching */
 .special-box {
   font-size: 10px;
   line-height: 12px;
@@ -114,6 +121,7 @@ h1 {
 }
 /* BEM */
 /*
+  V HTML takhle:
   <ul class="nav nav--hidden">
     <li class="nav__item"></li>
   </ul>
