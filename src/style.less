@@ -1,0 +1,119 @@
+
+@import "core/variables.less";
+@import "core/mixins.less";
+@import "core/base.less";
+@import "core/layout.less";
+
+@import "components/box.less";
+@import "components/text.less";
+
+@font-size: 15px; 
+
+/* TESTY */
+
+// Interpolace
+
+@image-dir: "images/";
+
+.box-image-dir {
+  background-image: url("@{image-dir}icons/icon.png");
+}
+
+.mixin-selector-interpolation(@selector) {
+  @{selector} {
+    font-size: 11px;
+  }
+}
+
+.box-selector-interpolation {
+  .mixin-selector-interpolation(~".box");
+}
+
+#gradient {
+
+  .linear(@par) {
+    background: linear-gradient(@par);
+  }
+
+  .radial(@par) {
+    background: radial-gradient(@par);
+  }
+
+}
+
+.box-gradient {
+  #gradient > .linear(~"to left, red, black");
+}
+
+// Pattern matching
+
+.special-box {
+  font-size: 10px;
+  line-height: 12px;
+  background-color: red;
+} 
+
+.special-box(@font-size) {
+  font-size: @font-size;
+  background-color: red;
+}
+
+.special-box(@font-size) when (@font-size >= 20px) {  
+  line-height: 25px;
+}
+
+.special-box(@font-size) when (@font-size < 20px) {
+  line-height: 20px;
+}
+
+.box {
+  .special-box(25px);
+}
+
+/* Funkce */
+
+.avg(@x, @y) {
+  @avg: (@x + @y)/2;
+}
+
+.box {
+  .avg(20px, 30px);
+  font-size: @avg;
+}
+
+/* Extend */
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.box-larger {
+  &:extend(.fs-12);
+  line-height: 18px;
+}
+
+
+/* BEM */
+
+/*
+  <ul class="nav nav--hidden">
+    <li class="nav__item"></li>
+  </ul>
+*/
+
+
+.nav {
+  font-size: 12px;
+  
+  &__item {
+    font-size: 12px;
+  }
+
+  &__toggle {
+    font-size: 12px;
+  }  
+  
+  &--hidden {
+    font-size: 12px;
+  }
+}  

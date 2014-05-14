@@ -12,7 +12,8 @@ module.exports = function(grunt) {
     less: {
       default: {
         files: [
-          {src: 'src/bootstrap.less', dest: 'dist/bootstrap.css'}
+          {src: 'src/bootstrap.less', dest: 'dist/bootstrap.css'},
+          {src: 'src/test.less', dest: 'dist/test.css'}
         ],
       }
     },  
